@@ -1,7 +1,8 @@
 <?php
 namespace app\admin\controller;
+use think\Controller;
 
-class Common
+class Common extends Controller
 {
 	
 
