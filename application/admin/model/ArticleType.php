@@ -1,9 +1,10 @@
 <?php
+
 namespace app\admin\model;
 
 use think\Model;
 
-class Artile extends Model
+class ArticleType extends Model
 {
-
+    //
 }

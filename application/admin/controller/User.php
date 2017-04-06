@@ -9,4 +9,13 @@ class User extends Common
 		return view();
 	}
 
+	public function add()
+	{
+		return view();
+	}
+	
+	public function del()
+	{
+		
+	}
 }
