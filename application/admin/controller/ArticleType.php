@@ -1,8 +1,8 @@
 <?php
 namespace app\admin\controller;
 
-//文章评论表
-class ArticleComment extends Common
+//文章类型表
+class ArticleType extends Common
 {
 	public function index()
 	{

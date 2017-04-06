@@ -18,7 +18,17 @@ return [
         ':name' => ['index/hello', ['method' => 'post']],
     ],
     '[admin]'     => [
-    	'admin/index'=>['admin/index/index'],
+    	'index'=>['admin/index/index'],
+    	'login'=>['admin/login/login'],
+    	'setting'=>['admin/setting/index'],
+    	'link'=>['admin/link/index'],
+    	
+    	'article'=>['admin/article/index'],
+    	'articleType'=>['admin/articleType/index'],
+    	'articleComment'=>['admin/articleComment/index'],
+    	
+    	'user'=>['admin/user/index'],
+    	'userGroup'=>['admin/userGroup/index'],
     ],
 
 ];

@@ -5,4 +5,8 @@ namespace app\admin\controller;
 class Setting extends Common
 {
 
+	public function index()
+	{
+		return view();
+	}
 }

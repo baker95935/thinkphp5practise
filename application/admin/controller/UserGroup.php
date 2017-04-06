@@ -5,4 +5,8 @@ namespace app\admin\controller;
 class UserGroup extends Common
 {
 
+	public function index()
+	{
+		return view();
+	}
 }
