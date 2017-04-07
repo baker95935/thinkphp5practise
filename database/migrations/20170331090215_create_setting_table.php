@@ -35,7 +35,7 @@ class CreateSettingTable extends Migrator
 	    ->addColumn(Column::string('web_description')->setComment('网站描述'))
 	    ->addColumn(Column::string('web_keywords')->setComment('网站关键字'))
 	    ->addColumn(Column::string('icp_info')->setComment('ICP备案信息'))
-	    ->addTimestamps()
+	    ->addColumn(Column::integer('create_time')->setComment('添加时间'))
 	    ->create();
 	}
 	

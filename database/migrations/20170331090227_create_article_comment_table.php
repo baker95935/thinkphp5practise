@@ -34,7 +34,7 @@ class CreateArticleCommentTable extends Migrator
 	    ->addColumn(Column::string('username')->setComment('发布者用户名'))
 	    ->addColumn(Column::integer('article_id')->setComment('文章ID'))
 	    ->addColumn(Column::integer('user_id')->setComment('用户ID'))
-	    ->addTimestamps()
+	    ->addColumn(Column::integer('create_time')->setComment('添加时间'))
 	    ->create();
 	}
 	

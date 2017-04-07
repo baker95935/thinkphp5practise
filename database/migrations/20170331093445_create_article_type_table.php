@@ -31,7 +31,7 @@ class CreateArticleTypeTable extends Migrator
 	  $this->table('article_type',['engine'=>'MyISAM'])
 	    ->addColumn(Column::string('type_name')->setUnique()->setComment('类型名'))
 	    ->addColumn(Column::string('remark')->setComment('备注'))
-	    ->addTimestamps()
+	    ->addColumn(Column::integer('create_time')->setComment('添加时间'))
 	    ->create();
 	}
 	

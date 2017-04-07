@@ -35,7 +35,8 @@ class CreateArticleTable extends Migrator
 	    ->addColumn(Column::integer('type_id')->setComment('文章类型'))
 	    ->addColumn(Column::integer('views')->setComment('浏览量'))
 	    ->addColumn(Column::integer('user_id')->setComment('发布者ID'))
-	    ->addTimestamps()
+	    ->addColumn(Column::integer('create_time')->setComment('添加时间'))
+	    ->addColumn(Column::integer('update_time')->setComment('更新时间'))
 	    ->create();
 	}
 	

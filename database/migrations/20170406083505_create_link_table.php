@@ -34,7 +34,7 @@ class CreateLinkTable extends Migrator
 	    ->addColumn(Column::integer('link_order')->setComment('链接排序'))
 	    ->addColumn(Column::string('link_img_url')->setComment('链接图片地址'))
 	    ->addColumn(Column::string('remark')->setComment('备注'))
-	    ->addTimestamps()
+	    ->addColumn(Column::integer('create_time')->setComment('添加时间'))
 	    ->create();
 	}
 	

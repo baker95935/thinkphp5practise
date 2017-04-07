@@ -33,7 +33,7 @@ class CreateUserTable extends Migrator
 	    ->addColumn(Column::string('email')->setUnique()->setComment('邮箱'))
 	    ->addColumn(Column::string('password')->setComment('密码'))
 	    ->addColumn(Column::integer('group')->setComment('用户组'))
-	    ->addTimestamps()
+	    ->addColumn(Column::integer('create_time')->setComment('添加时间'))
 	    ->create();
 	}
 	

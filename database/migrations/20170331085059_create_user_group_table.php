@@ -31,7 +31,7 @@ class CreateUserGroupTable extends Migrator
 	  $this->table('user_group',['engine'=>'MyISAM'])
 	    ->addColumn(Column::string('group_name')->setUnique()->setComment('组名'))
 	    ->addColumn(Column::string('remark')->setComment('备注'))
-	    ->addTimestamps()
+	    ->addColumn(Column::integer('create_time')->setComment('添加时间'))
 	    ->create();
 	}
 	
