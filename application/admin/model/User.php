@@ -5,23 +5,15 @@ use think\Model;
 
 class User extends Model
 {
-	//新增
-	public function addInfo($data)
+	//新增,更新
+	public function addInfo($data,$where=array())
 	{
 		$result=0;
-		!empty($result) && $result=$this->save($data);
+		!empty($data) && $result=$this->save($data,$where);
 		return $result;
 	}
 	
-	//更新
-	public function updateInfo($data,$where)
-	{
-		$result=0;
-		if(!empty($data) && !empty($where)) {
-			$result=$this->save($data,$where);
-		}
-		return $result;
-	}
+ 
 	
 	//删除
 	public	function deleteInfo($id)
