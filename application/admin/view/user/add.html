@@ -2,11 +2,11 @@
  <form  id="defaultForm" role="form" method="POST"  action="{:url('/admin/user/add/')}">
    <div class="form-group">
     <label for="exampleInputUsername">用户名：</label>
-    <input type="text" class="form-control" value="{$data.username}" name="username" id="username" placeholder="请输入您的用户名">
+    <input type="text" class="form-control" value="{present name="data.username"}{$data.username}{/present} " name="username" id="username" placeholder="请输入您的用户名">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail">邮箱：</label>
-    <input type="email" class="form-control" name="email" value="{$data.email}" id="email" placeholder="请输入您的邮箱地址">
+    <input type="email" class="form-control" name="email" value="{present name="data.email"}{$data.email}{/present}" id="email" placeholder="请输入您的邮箱地址">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword">密码</label>
@@ -17,8 +17,8 @@
     <input type="password" class="form-control"   name="confirmPassword" id="confirmPassword" placeholder="请输入您的确认密码">
   </div>
   <input type="hidden" name="__token__" value="{$Request.token}" />
-  <input type="hidden" name="id" id="id" value="{$data.id}" />
-  <button type="submit" class="btn btn-default">添加</button>
+  <input type="hidden" name="id" id="id" value="{present name="data.id"}{$data.id}{/present}" />
+  <button type="submit" class="btn btn-default">提交</button>
   <button type="reset" class="btn btn-default">重置</button>
 </form>	
 

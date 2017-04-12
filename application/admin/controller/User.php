@@ -43,6 +43,7 @@ class User extends Common
 				 
 				unset($data['confirmPassword']);
 				
+				$result=0;
 				if(empty($id)){//添加
 					$data['create_time']=time();
 					$result=$user->addInfo($data);
@@ -50,8 +51,11 @@ class User extends Common
 					$result=$user->addInfo($data,array('id'=>$id));//更新
 				}
 				
-				
-				$result && $this->success('操作成功', '/admin/user/index/');
+				if($result) {
+					$this->success('操作成功', '/admin/user/index/');
+				} else {
+					$this->success('操作失败或未生效请重试', '/admin/user/index/');
+				}
 			}
 	
 		}
@@ -65,6 +69,22 @@ class User extends Common
 	
 	public function del()
 	{
+		$user=new userModel();
+		$request = request();
 		
+		if($request->method()=='GET') {
+			
+			$id=$request->param('id');
+			$result=0;
+			$result=$user->deleteInfo($id);
+			
+			if($result==0){
+				$this->error('操作失败，请重试');
+			} else {
+				$this->success('操作成功', '/admin/user/index/');
+			}
+		}
+		
+		$this->error('非法操作，请重试');
 	}
 }

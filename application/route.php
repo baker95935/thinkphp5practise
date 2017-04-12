@@ -19,7 +19,8 @@ return [
     ],
     '[admin]'     => [
     	'index'=>['admin/index/index'],
-    	'login'=>['admin/login/login'],
+    	'login/login'=>['admin/login/login'],
+    	'login/logout'=>['admin/login/logout'],
     	'setting'=>['admin/setting/index'],
     	'link'=>['admin/link/index'],
     	
