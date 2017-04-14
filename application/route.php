@@ -30,7 +30,8 @@ return [
     	
     	'user/index'=>['admin/user/index'],
     	'user/add'=>['admin/user/add'],
-    	'userGroup'=>['admin/userGroup/index'],
+    	'userGroup/index'=>['admin/userGroup/index'],
+    	'userGroup/add'=>['admin/userGroup/add'],
     ],
 
 ];

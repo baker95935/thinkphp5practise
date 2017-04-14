@@ -1,2 +1,60 @@
 {layout name="layout" /}
-网站设置页面
+<h2>网站设置</h2>
+ <form  id="defaultForm" role="form" method="POST"  action="{:url('/admin/setting/add/')}">
+   <div class="form-group">
+    <label for="exampleInputUsername">网站名称：</label>
+    <input type="text" class="form-control" value="{present name="data.web_name"}{$data.web_name}{/present} " name="web_name" id="web_name" placeholder="请输入网站名称">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail">网址：</label>
+    <input type="text" class="form-control" name="web_url" value="{present name="data.web_url"}{$data.web_url}{/present}" id="web_url" placeholder="请输入网址">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword">网站标题:</label>
+    <input type="text" class="form-control"   name="web_title" id="web_title" placeholder="请输入网站标题">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputPassword">网站描述:</label>
+    <input type="text" class="form-control"   name="web_description" id="web_description" placeholder="请输入网站描述">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword">网站关键字:</label>
+    <input type="text" class="form-control"   name="web_keywords" id="web_keywords" placeholder="请输入网站关键字">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputPassword">ICP备案信息</label>
+    <input type="text" class="form-control"   name="icp_info" id="icp_info" placeholder="请输入ICP备案信息">
+  </div>
+  <input type="hidden" name="__token__" value="{$Request.token}" />
+  <input type="hidden" name="id" id="id" value="{present name="data.id"}{$data.id}{/present}" />
+  <button type="submit" class="btn btn-default">提交</button>
+  <button type="reset" class="btn btn-default">重置</button>
+</form>	
+<script>
+$(document).ready(function() {
+    $('#defaultForm').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            web_name: {
+                message: 'The username is not valid',
+                validators: {
+                    notEmpty: {
+                        message: '网站名称必须填写'
+                    },
+                    stringLength: {
+                        min: 2,
+                        max: 30,
+                        message: '网站名称最短2个字最长30个字'
+                    },
+                }
+            },
+      
+        }
+    });
+});
+</script>
