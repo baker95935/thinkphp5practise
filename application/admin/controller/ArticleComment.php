@@ -2,7 +2,7 @@
 namespace app\admin\controller;
 
 //文章评论表
-class ArticleComment extends Common
+class Articlecomment extends Common
 {
 	public function index()
 	{

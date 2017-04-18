@@ -22,16 +22,19 @@ return [
     	'login/login'=>['admin/login/login'],
     	'login/logout'=>['admin/login/logout'],
     	'setting'=>['admin/setting/index'],
-    	'link'=>['admin/link/index'],
+    	
     	
     	'article'=>['admin/article/index'],
-    	'articleType'=>['admin/articleType/index'],
-    	'articleComment'=>['admin/articleComment/index'],
+    	'articletype'=>['admin/articletype/index'],
+    	'articlecomment'=>['admin/articlecomment/index'],
     	
     	'user/index'=>['admin/user/index'],
     	'user/add'=>['admin/user/add'],
     	'usergroup/index'=>['admin/usergroup/index'],
     	'usergroup/add'=>['admin/usergroup/add'],
+    	
+    	'link/index'=>['admin/link/index'],
+    	'link/add'=>['admin/link/add'],
  
     ],
 
