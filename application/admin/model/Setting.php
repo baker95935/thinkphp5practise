@@ -18,10 +18,8 @@ class Setting extends Model
 	{
 		$id=0;
 		$info=Setting::where('id','>',0)->limit(1)->select();
-		$a=$info->data;
-		var_dump($a);
-		 
-		
+		!empty($info[0]) && $id=$info[0]['id'];
+	 
 		return $id;
 		
 	}

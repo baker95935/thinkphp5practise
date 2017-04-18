@@ -10,13 +10,11 @@ class Setting extends Common
 		$setting=new settingModel();
 		$request=request();
 		
-		//
-		
 		$id=$request->param('id');
 		if(empty($id)) {
 			$id=$setting->getOneId();
 		}
-	 var_dump($id);
+ 
 		if($request->method()=='POST') {
 			//数据获取
 			$data=array(
@@ -28,13 +26,13 @@ class Setting extends Common
 				'icp_info'=>$request->param('icp_info'),
 				'id'=>$request->param('id'),
 			);
-				
+	 
 			$result=0;
 			if(empty($id)){//添加
 				$data['create_time']=time();
 				$result=$setting->addInfo($data);
 			} else {
-				$result=$setting->addInfo($data,array('id'=>$id));//更新
+				$result=$setting->addInfo($data,array('id'=>$data['id']));//更新
 			}
 			
 			if($result) {
@@ -46,7 +44,6 @@ class Setting extends Common
 			
 		$data=array();
 		!empty($id) && $data=SettingModel::get($id);
- 
 		$this->assign('data',$data);
 		
 		return view();

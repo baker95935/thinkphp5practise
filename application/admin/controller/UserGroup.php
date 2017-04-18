@@ -3,7 +3,7 @@ namespace app\admin\controller;
 use app\admin\model\UserGroup as userGroupModel;
 
 //用户类型表
-class UserGroup extends Common
+class Usergroup extends Common
 {
 
 	public function index()
@@ -66,7 +66,7 @@ class UserGroup extends Common
 	}
 	
 	
-	public function delete()
+	public function del()
 	{
 		$userGroup=new userGroupModel();
 		$request = request();
