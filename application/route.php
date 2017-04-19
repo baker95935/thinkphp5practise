@@ -25,16 +25,18 @@ return [
     	
     	
     	'article'=>['admin/article/index'],
-    	'articletype'=>['admin/articletype/index'],
     	'articlecomment'=>['admin/articlecomment/index'],
     	
     	'user/index'=>['admin/user/index'],
     	'user/add'=>['admin/user/add'],
-    	'usergroup/index'=>['admin/usergroup/index'],
-    	'usergroup/add'=>['admin/usergroup/add'],
+    	'userGroup/index'=>['admin/userGroup/index'],
+    	'userGroup/add'=>['admin/userGroup/add'],
     	
     	'link/index'=>['admin/link/index'],
     	'link/add'=>['admin/link/add'],
+    	
+    	'articleType/index'=>['admin/articleType/index'],
+    	'articleType/add'=>['admin/articleType/add'],
  
     ],
 

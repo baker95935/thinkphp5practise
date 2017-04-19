@@ -3,7 +3,7 @@ namespace app\admin\controller;
 use app\admin\model\UserGroup as userGroupModel;
 
 //用户类型表
-class Usergroup extends Common
+class UserGroup extends Common
 {
 
 	public function index()

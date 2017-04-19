@@ -27,7 +27,7 @@ class Link extends Model
 	public function getListInfo($where)
 	{
 		$list=array();
-		$list = Link::where('id','>',0)->paginate();
+		$list = Link::where('id','>',0)->order('link_order desc')->paginate();
 		return $list;
 	}
 
