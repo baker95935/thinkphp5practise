@@ -25,7 +25,7 @@ return [
     	
     	
     	'article'=>['admin/article/index'],
-    	'articlecomment'=>['admin/articlecomment/index'],
+    	
     	
     	'user/index'=>['admin/user/index'],
     	'user/add'=>['admin/user/add'],
@@ -37,6 +37,8 @@ return [
     	
     	'articleType/index'=>['admin/articleType/index'],
     	'articleType/add'=>['admin/articleType/add'],
+    	'articleComment/index'=>['admin/articleComment/index'],
+    	'articleComment/add'=>['admin/articleComment/add'],
  
     ],
 
