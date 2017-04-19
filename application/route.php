@@ -23,10 +23,6 @@ return [
     	'login/logout'=>['admin/login/logout'],
     	'setting'=>['admin/setting/index'],
     	
-    	
-    	'article'=>['admin/article/index'],
-    	
-    	
     	'user/index'=>['admin/user/index'],
     	'user/add'=>['admin/user/add'],
     	'userGroup/index'=>['admin/userGroup/index'],
@@ -40,6 +36,8 @@ return [
     	'articleComment/index'=>['admin/articleComment/index'],
     	'articleComment/add'=>['admin/articleComment/add'],
  
+    	'article/index'=>['admin/article/index'],
+    	'article/add'=>['admin/article/add'],
     ],
 
 ];

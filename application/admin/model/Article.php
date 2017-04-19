@@ -5,29 +5,29 @@ use think\Model;
 
 class Article extends Model
 {
-	//新增
-	public function add($data)
+//新增,更新
+	public function addInfo($data,$where=array())
 	{
-		return $this->save($data);
+		$result=0;
+		!empty($data) && $result=$this->save($data,$where);
+		return $result;
 	}
 	
-	//更新
-	public function update($data,$where)
-	{
-		return $this->save($data,$where);
-	}
 	
 	//删除
-	public	function delete($id)
+	public	function deleteInfo($id)
 	{
-		return $this->destroy($id);
+		$result=0;
+		$id && $result=$this->destroy($id);
+	
+		return $result;
 	}
 	
 	//列表
-	public function getList($where)
+	public function getListInfo($where)
 	{
 		$list=array();
-		$list = User::all($where);
+		$list = Article::where('id','>',0)->paginate();
 		return $list;
 	}
 }
