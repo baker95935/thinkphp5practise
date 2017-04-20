@@ -6,7 +6,14 @@ use think\Model;
 
 class ArticleType extends Model
 {
-//新增,更新
+	//关联
+	public function article()
+	{
+		return $this->hasMany('Article','type_id');
+	}
+	
+	
+	//新增,更新
 	public function addInfo($data,$where=array())
 	{
 		$result=0;

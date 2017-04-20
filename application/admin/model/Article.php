@@ -5,7 +5,19 @@ use think\Model;
 
 class Article extends Model
 {
-//新增,更新
+
+	//设置关联
+	public function articleComment()
+	{
+		return $this->hasMany('ArticleComment');
+	}
+	
+	public function articleType()
+	{
+		return $this->belongsTo('ArticleType','type_id');
+	}
+
+	//新增,更新
 	public function addInfo($data,$where=array())
 	{
 		$result=0;
@@ -27,7 +39,7 @@ class Article extends Model
 	public function getListInfo($where)
 	{
 		$list=array();
-		$list = Article::where('id','>',0)->paginate();
+		$list = Article::with('articleType')->where('id'>0)->paginate();
 		return $list;
 	}
 }

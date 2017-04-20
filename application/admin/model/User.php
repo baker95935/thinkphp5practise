@@ -6,6 +6,12 @@ use think\Session;
 
 class User extends Model
 {
+
+	public function userGroup()
+	{
+		return $this->belongsTo('UserGroup','group');
+	}
+	
 	//新增,更新
 	public function addInfo($data,$where=array())
 	{
@@ -13,8 +19,6 @@ class User extends Model
 		!empty($data) && $result=$this->save($data,$where);
 		return $result;
 	}
-	
- 
 	
 	//删除
 	public	function deleteInfo($id)
@@ -29,7 +33,7 @@ class User extends Model
 	public function getListInfo($where)
 	{
 		$list=array();
-		$list = User::where('id','>',0)->paginate();
+		$list = User::with('user_group')->where('id','>',0)->order('id desc')->paginate();
 		return $list;
 	}
 	

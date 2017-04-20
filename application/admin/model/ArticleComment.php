@@ -4,6 +4,11 @@ use think\Model;
 
 class ArticleComment extends Model
 {
+	public function article()
+	{
+		return $this->belongsTo('Article');
+	}
+	
 	//新增,更新
 	public function addInfo($data,$where=array())
 	{

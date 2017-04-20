@@ -5,6 +5,12 @@ use think\Model;
 
 class UserGroup extends Model
 {
+	
+	public function user()
+	{
+		return $this->hasMany('User','group_id');
+	}
+	
 	//新增,更新
 	public function addInfo($data,$where=array())
 	{

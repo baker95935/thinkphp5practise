@@ -13,6 +13,7 @@ class Article extends Common
 		$article=new articleModel();
 		 
 		$list=$article->getListInfo($where=array());
+ 
 		$this->assign('list',$list);
 		
 		return view();
