@@ -15,7 +15,7 @@ class Login extends Controller
 		
 		if($request->method()=='POST') {
 			$data['email']=$request->param('email');
-			$data['password']=$request->param('password');
+			$data['password']=md5($request->param('password'));
 		 
 			$user=new userModel();
 			$result=$user->validLogin($data);

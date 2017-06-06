@@ -7,6 +7,7 @@ class User extends Validate
 {
 	protected $rule = [
 		'email' =>  'require|email|unique:user',
+		'username' =>  'require|unique:user',
 		'password' => 'require',
 		'confirmPassword' =>  "require|confirm:password",
 		'__token__' => 'token',

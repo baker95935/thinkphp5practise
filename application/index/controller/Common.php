@@ -13,6 +13,7 @@ class Common extends Controller
 		//校验下登陆的状态
 		$username=Session::get('username');
 		$password=Session::get('password');
+ 
 		if(!empty($username) && !empty($password)){
 			$isLogin=1;
 		}
