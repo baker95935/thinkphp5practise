@@ -1,7 +1,7 @@
 <?php
 
 namespace app\index\controller;
-
+use app\admin\model\Article as articleModel;
  
 class News extends Common
 {
@@ -12,7 +12,14 @@ class News extends Common
      */
     public function index()
     {
-       return view();
+    	$list=array();
+    	$article=new articleModel();
+    		
+    	$list=$article->getListInfo(array(),9);
+    	
+    	$this->assign('list',$list);
+    	
+    	return view();
     }
 
     /**

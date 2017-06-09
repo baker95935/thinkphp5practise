@@ -36,10 +36,10 @@ class Article extends Model
 	}
 	
 	//列表
-	public function getListInfo($where)
+	public function getListInfo($where,$pagesize=10)
 	{
 		$list=array();
-		$list = Article::with('articleType')->where('id'>0)->paginate();
+		$list = Article::with('articleType')->where('id'>0)->paginate($pagesize);
 		return $list;
 	}
 }
