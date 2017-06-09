@@ -4,14 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>企业网站模板</title>
+  <title>{$settingInfo.web_title}-{$settingInfo.web_name}</title>
   <link rel="stylesheet" href="__ROOT__static/assets/css/amazeui.css" />
   <link rel="stylesheet" href="__ROOT__static/assets/css/common.min.css" />
   
   <!-- 不同的控制器访问不同的css -->
-  <link rel="stylesheet" href="__ROOT__static/assets/css/about.min.css" />
-  <link rel="stylesheet" href="__ROOT__static/assets/css/index.min.css" />
-  <link rel="stylesheet" href="__ROOT__static/assets/css/other.min.css" />
+  <link rel="stylesheet" href="__ROOT__static/assets/css/about.min.css" /><!--关于我们  -->
+  <link rel="stylesheet" href="__ROOT__static/assets/css/index.min.css" /><!--首页-->
+  
+  <link rel="stylesheet" href="__ROOT__static/assets/css/other.min.css" /><!--登录注册-->
+  
+  <link rel="stylesheet" href="__ROOT__static/assets/css/join.min.css" /><!--加入我们-->
+  
+  <link rel="stylesheet" href="__ROOT__static/assets/css/news.min.css" /><!--新闻中心-->
+  
+  <link rel="stylesheet" href="__ROOT__static/assets/css/example.min.css" /><!--客户案例-->
+  
+  <link rel="stylesheet" href="__ROOT__static/assets/css/solution.min.css" /><!--解决方案-->
 </head>
 <body>
   <div class="layout">
@@ -66,14 +75,14 @@
                       <div class="header_contacts--item">
   											<div class="contact_mini">
   												<i style="color:#7c6aa6" class="contact-icon am-icon-phone"></i>
-  												<strong>0 (855) 233-5385</strong>
+  												<strong>0 (123) 123-123</strong>
   												<span>周一~周五, 8:00 - 20:00</span>
   											</div>
   										</div>
                       <div class="header_contacts--item">
   											<div class="contact_mini">
   												<i style="color:#7c6aa6" class="contact-icon am-icon-envelope-o"></i>
-  												<strong>cn@yunshipei.com</strong>
+  												<strong>test@test.com</strong>
   												<span>随时欢迎您的来信！</span>
   											</div>
   										</div>
@@ -85,7 +94,7 @@
   											</div>
   										</div>
                     </div>
-                    <a href="html/contact.html" class="contact-btn">
+                    <a href="__ROOT__index/contact/index" class="contact-btn">
                       <button type="button" class="am-btn am-btn-secondary am-radius">联系我们</button>
                     </a>
                   </div>
@@ -100,32 +109,32 @@
         <div class="nav-contain">
           <div class="nav-inner">
             <ul class="am-nav am-nav-pills am-nav-justify">
-              <li class=""><a href="__ROOT__/index/">首页</a></li>
+              <li class=""><a href="__ROOT__index/">首页</a></li>
               <li>
                 <a href="#">产品中心</a>
                 <!-- sub-menu start-->
                 <ul class="sub-menu">
-									<li class="menu-item"><a href="__ROOT__/product/1">产品展示11</a></li>
-									<li class="menu-item"><a href="__ROOT__/product/2">产品展示2</a></li>
-									<li class="menu-item"><a href="__ROOT__/product/3">产品展示3</a></li>
+									<li class="menu-item"><a href="__ROOT__index/product/1">产品展示11</a></li>
+									<li class="menu-item"><a href="__ROOT__index/product/2">产品展示2</a></li>
+									<li class="menu-item"><a href="__ROOT__index/product/3">产品展示3</a></li>
 								</ul>
                 <!-- sub-menu end-->
               </li>
-              <li><a href="__ROOT__/example/">客户案例</a></li>
-              <li><a href="__ROOT__/solution/">解决方案</a></li>
+              <li><a href="__ROOT__index/example/index">客户案例</a></li>
+              <li><a href="__ROOT__index/solution/index">解决方案</a></li>
               <li>
-                <a href="__ROOT__/news/">新闻中心</a>
+                <a href="__ROOT__index/news/index">新闻中心</a>
                 <!-- sub-menu start-->
                 <ul class="sub-menu">
-									<li class="menu-item"><a href="__ROOT__/news-content.html">公司动态</a></li>
-									<li class="menu-item"><a href="__ROOT__/404-dark.html">行业动态</a></li>
-									<li class="menu-item"><a href="__ROOT__/404-light.html">精彩专题</a></li>
+									<li class="menu-item"><a href="__ROOT__index/news-content.html">公司动态</a></li>
+									<li class="menu-item"><a href="__ROOT__index/404-dark.html">行业动态</a></li>
+									<li class="menu-item"><a href="__ROOT__index/404-light.html">精彩专题</a></li>
 								</ul>
                 <!-- sub-menu end-->
               </li>
-              <li><a href="__ROOT__/about.html">关于我们</a></li>
-              <li><a href="__ROOT__/join.html">加入我们</a></li>
-              <li><a href="__ROOT__/contact.html">联系我们</a></li>
+              <li><a href="__ROOT__index/about/index">关于我们</a></li>
+              <li><a href="__ROOT__index/join/index">加入我们</a></li>
+              <li class="a:active"><a href="__ROOT__index/contact/index">联系我们</a></li>
             </ul>
           </div>
         </div>
@@ -146,42 +155,42 @@
               <div class="am-offcanvas" >
                 <div class="am-offcanvas-bar">
                   <ul class="am-menu-nav am-avg-sm-1">
-                    <li><a href="__ROOT__/index/" class="" >首页</a></li>
+                    <li><a href="__ROOT__index/" class="" >首页</a></li>
                     <li class="am-parent">
                       <a href="#" class="" >产品中心</a>
                       <ul class="am-menu-sub am-collapse ">
                         <li class="">
-                          <a href="__ROOT__/product/1/" class="" >产品展示1</a>
+                          <a href="__ROOT__index/product/1/" class="" >产品展示1</a>
                         </li>
                         <li class="">
-                          <a href="__ROOT__/product/2/" class="" >产品展示2</a>
+                          <a href="__ROOT__index/product/2/" class="" >产品展示2</a>
                         </li>
                         <li class="">
-                          <a href="__ROOT__/product/3/" class="" >产品展示3</a>
+                          <a href="__ROOT__index/product/3/" class="" >产品展示3</a>
                         </li>
                       </ul>
                     </li>
-                    <li class=""><a href="__ROOT__/example/" class="" >客户案例</a></li>
-                    <li class=""><a href="__ROOT__/solution/" class="" >解决方案</a></li>
+                    <li class=""><a href="__ROOT__index/example/" class="" >客户案例</a></li>
+                    <li class=""><a href="__ROOT__index/solution/" class="" >解决方案</a></li>
                     <li class="am-parent">
-                      <a href="./news.html" class="" >新闻中心</a>
+                      <a href="__ROOT__index/news/index" class="" >新闻中心</a>
                       <ul class="am-menu-sub am-collapse  ">
                         <li class="">
-                          <a href="__ROOT__/news-content/" class="" >公司动态</a>
+                          <a href="__ROOT__index/news-content/" class="" >公司动态</a>
                         </li>
                         <li class="">
-                          <a href="__ROOT__/404-dark/" class="" >行业动态</a>
+                          <a href="__ROOT__index/404-dark/" class="" >行业动态</a>
                         </li>
                         <li class="">
-                          <a href="__ROOT__/404-light/" class="" >精彩专题</a>
+                          <a href="__ROOT__index/404-light/" class="" >精彩专题</a>
                         </li>
                       </ul>
                     </li>
-                    <li class=""><a href="__ROOT__/about/" class="" >关于我们</a></li>
-                    <li class=""><a href="__ROOT__/join/" class="" >加入我们</a></li>
-                    <li class=""><a href="__ROOT__/contact/" class="" >联系我们</a></li>
+                    <li class=""><a href="__ROOT__index/about/" class="" >关于我们</a></li>
+                    <li class=""><a href="__ROOT__index/join/" class="" >加入我们</a></li>
+                    <li class=""><a href="__ROOT__index/contact/" class="" >联系我们</a></li>
                     <li class="am-parent">
-                      <a href="__ROOT__/news/" class="nav-icon nav-icon-globe" >Language</a>
+                      <a href="__ROOT__index/news/" class="nav-icon nav-icon-globe" >Language</a>
                       <ul class="am-menu-sub am-collapse  ">
                         <li>
                           <a href="#" >English</a>

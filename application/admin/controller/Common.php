@@ -15,7 +15,7 @@ class Common extends Controller
 		//左侧导航条
 		$nav=$request->controller();
 		$this->assign('nav',$nav);
-		
+	 
 		//登录校验
 		if(!Session::has('username') || !Session::has('password') || Session::get('group')!=1)
 		{

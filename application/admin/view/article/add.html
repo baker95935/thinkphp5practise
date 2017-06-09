@@ -8,7 +8,7 @@
     <label for="exampleInputEmail">文章分类：</label>
  	<select name="type_id" id="type_id" class="form-control">
  	{foreach $listType as $vo}
- 	<OPTION value="{$vo.id}" {if condition="$data.type_id eq $vo.id"} selected="selected" {/if} >{$vo.type_name}</OPTION>
+ 	<OPTION value="{$vo.id}" {present name="data.type_id "}{if condition="$data.type_id eq $vo.id"} selected="selected" {/if}{/present} >{$vo.type_name}</OPTION>
  	{/foreach}
  	</select>
   </div>

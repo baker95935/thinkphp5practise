@@ -2,10 +2,8 @@
 
 namespace app\index\controller;
 
-use think\Controller;
-use think\Request;
-
-class News extends Controller
+ 
+class News extends Common
 {
     /**
      * 显示资源列表
@@ -14,7 +12,7 @@ class News extends Controller
      */
     public function index()
     {
-        //
+       return view();
     }
 
     /**
@@ -24,7 +22,7 @@ class News extends Controller
      */
     public function create()
     {
-        //
+        return view();
     }
 
  

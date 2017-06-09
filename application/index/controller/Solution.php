@@ -5,7 +5,7 @@ namespace app\index\controller;
 use think\Controller;
 use think\Request;
 
-class Solution extends Controller
+class Solution extends Common
 {
     /**
      * 显示资源列表
@@ -14,7 +14,7 @@ class Solution extends Controller
      */
     public function index()
     {
-        //
+        return view();
     }
 
 
@@ -26,7 +26,7 @@ class Solution extends Controller
      */
     public function read($id)
     {
-        //
+        return view();
     }
 
  

@@ -4,6 +4,7 @@ namespace app\index\controller;
 
 use think\Controller;
 use think\Session;
+use app\index\model\Setting as settingModel;;
 
 class Common extends Controller
 {
@@ -18,6 +19,14 @@ class Common extends Controller
 			$isLogin=1;
 		}
 		$this->assign('isLogin',$isLogin);
+		
+ 		//网站SEO相关
+		$setting=new settingModel();
+		$id=$setting->getOneId();
+		$settingInfo=SettingModel::get($id);
+	 
+		$this->assign('settingInfo',$settingInfo);
+		
 	}
 
     
