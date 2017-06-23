@@ -2,10 +2,10 @@
 
 namespace app\index\controller;
 
-use think\Controller;
 use think\Request;
+use app\index\model\Article as articleModel;
 
-class Product extends Controller
+class Product extends Common
 {
     /**
      * 显示资源列表
@@ -14,17 +14,7 @@ class Product extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * 显示创建资源表单页.
-     *
-     * @return \think\Response
-     */
-    public function create()
-    {
-        //
+        return view();
     }
 
 
@@ -34,9 +24,15 @@ class Product extends Controller
      * @param  int  $id
      * @return \think\Response
      */
-    public function read($id)
+    public function detail($id)
     {
-        //
+        $request=Request();
+        $id=$request->param('id');
+        
+        $articleInfo=articleModel::get($id);
+       	$this->assign('articleInfo',$articleInfo);
+       	
+       	return view();
     }
 
  

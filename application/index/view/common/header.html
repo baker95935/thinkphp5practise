@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="__ROOT__static/assets/css/example.min.css" /><!--客户案例-->
   
   <link rel="stylesheet" href="__ROOT__static/assets/css/solution.min.css" /><!--解决方案-->
+  
+  <link rel="stylesheet" href="__ROOT__static/assets/css/product.min.css" /><!--产品中心-->
 </head>
 <body>
   <div class="layout">
@@ -111,13 +113,13 @@
             <ul class="am-nav am-nav-pills am-nav-justify">
               <li class=""><a href="__ROOT__index/">首页</a></li>
               <li>
-                <a href="#">产品中心</a>
+                <a href="__ROOT__index/product/index">产品中心</a>
                 <!-- sub-menu start-->
                 <ul class="sub-menu">
-									<li class="menu-item"><a href="__ROOT__index/product/1">产品展示11</a></li>
-									<li class="menu-item"><a href="__ROOT__index/product/2">产品展示2</a></li>
-									<li class="menu-item"><a href="__ROOT__index/product/3">产品展示3</a></li>
-								</ul>
+                 	{foreach $articleList as $vo}
+					<li class="menu-item"><a href="__ROOT__index/product/detail/id/{$vo->id}">{$vo->title}</a></li>
+					 {/foreach}
+				</ul>
                 <!-- sub-menu end-->
               </li>
               <li><a href="__ROOT__index/example/index">客户案例</a></li>
@@ -126,10 +128,10 @@
                 <a href="__ROOT__index/news/index">新闻中心</a>
                 <!-- sub-menu start-->
                 <ul class="sub-menu">
-									<li class="menu-item"><a href="__ROOT__index/news-content.html">公司动态</a></li>
-									<li class="menu-item"><a href="__ROOT__index/404-dark.html">行业动态</a></li>
-									<li class="menu-item"><a href="__ROOT__index/404-light.html">精彩专题</a></li>
-								</ul>
+                	{foreach $newsList as $vo}
+						<li class="menu-item"><a href="__ROOT__index/product/detail/id/{$vo->id}">{$vo->title}</a></li>
+					{/foreach}
+				</ul>
                 <!-- sub-menu end-->
               </li>
               <li><a href="__ROOT__index/about/index">关于我们</a></li>

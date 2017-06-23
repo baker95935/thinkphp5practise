@@ -4,7 +4,9 @@ namespace app\index\controller;
 
 use think\Controller;
 use think\Session;
-use app\index\model\Setting as settingModel;;
+use app\index\model\Setting as settingModel;
+use app\index\model\Article as articleModel;
+
 
 class Common extends Controller
 {
@@ -24,9 +26,16 @@ class Common extends Controller
 		$setting=new settingModel();
 		$id=$setting->getOneId();
 		$settingInfo=SettingModel::get($id);
-	 
 		$this->assign('settingInfo',$settingInfo);
 		
+		//产品中心
+		$article=new articleModel();
+		$articleList=$article->headerList(1);
+		$this->assign('articleList',$articleList);
+		
+		//新闻中心
+		$newsList=$article->headerList(4);
+		$this->assign('newsList',$newsList);
 	}
 
     
