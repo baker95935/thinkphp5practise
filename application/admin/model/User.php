@@ -30,10 +30,10 @@ class User extends Model
 	}
 	
 	//列表
-	public function getListInfo($where)
+	public function getListInfo($where,$query)
 	{
 		$list=array();
-		$list = User::with('user_group')->where('id','>',0)->order('id desc')->paginate();
+		$list = User::with('user_group')->where($where)->order('id desc')->paginate(array('list_rows'=>20,'query'=>$query)); // 分页的url额外参数);
 		return $list;
 	}
 	

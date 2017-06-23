@@ -10,9 +10,16 @@ class User extends Common
 	{
 		$list=array();
 		$users=new userModel();
-		 
-		$list=$users->getListInfo($where=array());
+		
+		$request = request();
+		$search=$request->param('search');
+	 
+		!empty($search) && $where['username']=['like',"%".$search."%"];
+		$where['id']=['>',0];
+		
+		$list=$users->getListInfo($where,array('search'=>$search));
 		$this->assign('list',$list);
+		$this->assign('search',$search);
 		
 		return view();
 	}
