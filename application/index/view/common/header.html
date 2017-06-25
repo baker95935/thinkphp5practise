@@ -68,7 +68,7 @@
               <div class="am-g">
                 <div class="am-u-lg-2 am-u-sm-12">
                   <div class="logo">
-                    <a href=""><img src="__ROOT__static/assets/images/logo.png" alt="" /></a>
+                    <a href=""><img src="{$settingInfo.logo_addr}" alt="" /></a>
                   </div>
                 </div>
                 <div class="am-u-md-10">
@@ -77,22 +77,21 @@
                       <div class="header_contacts--item">
   											<div class="contact_mini">
   												<i style="color:#7c6aa6" class="contact-icon am-icon-phone"></i>
-  												<strong>0 (123) 123-123</strong>
+  												<strong>{$settingInfo.contact_tel}</strong>
   												<span>周一~周五, 8:00 - 20:00</span>
   											</div>
   										</div>
                       <div class="header_contacts--item">
   											<div class="contact_mini">
   												<i style="color:#7c6aa6" class="contact-icon am-icon-envelope-o"></i>
-  												<strong>test@test.com</strong>
+  												<strong>{$settingInfo.contact_tel}</strong>
   												<span>随时欢迎您的来信！</span>
   											</div>
   										</div>
                       <div class="header_contacts--item">
   											<div class="contact_mini">
   												<i style="color:#7c6aa6" class="contact-icon am-icon-map-marker"></i>
-  												<strong>天使大厦,</strong>
-  												<span>海淀区海淀大街27</span>
+  												<strong>{$settingInfo.contact_addr}</strong>
   											</div>
   										</div>
                     </div>
@@ -161,15 +160,9 @@
                     <li class="am-parent">
                       <a href="#" class="" >产品中心</a>
                       <ul class="am-menu-sub am-collapse ">
-                        <li class="">
-                          <a href="__ROOT__index/product/1/" class="" >产品展示1</a>
-                        </li>
-                        <li class="">
-                          <a href="__ROOT__index/product/2/" class="" >产品展示2</a>
-                        </li>
-                        <li class="">
-                          <a href="__ROOT__index/product/3/" class="" >产品展示3</a>
-                        </li>
+	                    {foreach $articleList as $vo}
+						<li class="menu-item"><a href="__ROOT__index/product/detail/id/{$vo->id}">{$vo->title}</a></li>
+						 {/foreach}
                       </ul>
                     </li>
                     <li class=""><a href="__ROOT__index/example/" class="" >客户案例</a></li>
@@ -177,15 +170,9 @@
                     <li class="am-parent">
                       <a href="__ROOT__index/news/index" class="" >新闻中心</a>
                       <ul class="am-menu-sub am-collapse  ">
-                        <li class="">
-                          <a href="__ROOT__index/news-content/" class="" >公司动态</a>
-                        </li>
-                        <li class="">
-                          <a href="__ROOT__index/404-dark/" class="" >行业动态</a>
-                        </li>
-                        <li class="">
-                          <a href="__ROOT__index/404-light/" class="" >精彩专题</a>
-                        </li>
+                     	{foreach $newsList as $vo}
+						<li class="menu-item"><a href="__ROOT__index/product/detail/id/{$vo->id}">{$vo->title}</a></li>
+						{/foreach}
                       </ul>
                     </li>
                     <li class=""><a href="__ROOT__index/about/" class="" >关于我们</a></li>
