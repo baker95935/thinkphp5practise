@@ -24,6 +24,10 @@ class Setting extends Common
 				'web_description'=>$request->param('web_description'),
 				'web_keywords'=>$request->param('web_keywords'),
 				'icp_info'=>$request->param('icp_info'),
+				'logo_addr'=>$request->param('logo_addr'),
+				'contact_tel'=>$request->param('contact_tel'),
+				'contact_email'=>$request->param('contact_email'),
+				'contact_addr'=>$request->param('contact_addr'),
 				'id'=>$request->param('id'),
 			);
 	 
